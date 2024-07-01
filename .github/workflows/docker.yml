@@ -1,0 +1,29 @@
+name: retag
+
+on: [ push ]
+
+jobs:
+  push_to_registry:
+    # 任务的名字
+    name: Push Docker image to Dockerhub
+    runs-on: ubuntu-22.04
+    steps:
+      # 登陆阿里云
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          registry: registry.cn-hangzhou.aliyuncs.com
+          username: wanlinus@qq.com
+          password: ${{ secrets.ALI_PWD }}
+
+      # 基础镜像
+      - name: mysql
+        run: docker pull mysql:8.4 && docker image tag mysql:8.4 registry.cn-hangzhou.aliyuncs.com/wanlinus/mysql:8.4 && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/mysql:8.4
+      - name: redis
+        run: docker pull redis:7 && docker image tag redis:7 registry.cn-hangzhou.aliyuncs.com/wanlinus/redis:7 && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/redis:7
+      - name: mqtt
+        run: docker pull eclipse-mosquitto:2 && docker image tag eclipse-mosquitto:2 registry.cn-hangzhou.aliyuncs.com/wanlinus/eclipse-mosquitto:2 && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/eclipse-mosquitto:2
+      - name: minio
+        run: docker pull quay.io/minio/minio:RELEASE.2024-06-29T01-20-47Z && docker image tag quay.io/minio/minio:RELEASE.2024-06-29T01-20-47Z registry.cn-hangzhou.aliyuncs.com/wanlinus/minio:RELEASE.2024-06-29T01-20-47Z && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/minio:RELEASE.2024-06-29T01-20-47Z
+      - name: portainer
+        run: docker pull portainer/portainer-ce && docker image tag portainer/portainer-ce registry.cn-hangzhou.aliyuncs.com/wanlinus/portainer-ce && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/portainer-ce
