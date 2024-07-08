@@ -24,6 +24,6 @@ jobs:
       - name: mqtt
         run: docker pull eclipse-mosquitto:2 && docker image tag eclipse-mosquitto:2 registry.cn-hangzhou.aliyuncs.com/wanlinus/eclipse-mosquitto:2 && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/eclipse-mosquitto:2
       - name: minio
-        run: docker pull quay.io/minio/minio:RELEASE.2024-06-29T01-20-47Z && docker image tag quay.io/minio/minio:RELEASE.2024-06-29T01-20-47Z registry.cn-hangzhou.aliyuncs.com/wanlinus/minio:RELEASE.2024-06-29T01-20-47Z && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/minio:RELEASE.2024-06-29T01-20-47Z
+        run: docker pull quay.io/minio/minio:RELEASE.2024-07-04T14-25-45Z && docker image tag quay.io/minio/minio:RELEASE.2024-07-04T14-25-45Z registry.cn-hangzhou.aliyuncs.com/wanlinus/minio:RELEASE.2024-07-04T14-25-45Z && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/minio:RELEASE.2024-07-04T14-25-45Z
       - name: portainer
         run: docker pull portainer/portainer-ce && docker image tag portainer/portainer-ce registry.cn-hangzhou.aliyuncs.com/wanlinus/portainer-ce && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/portainer-ce
