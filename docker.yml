@@ -1,6 +1,11 @@
 name: retag
 
-on: [ push ]
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '00 23 * * *'
+
 
 jobs:
   push_to_registry:
@@ -28,6 +33,6 @@ jobs:
       - name: portainer
         run: docker pull portainer/portainer-ce && docker image tag portainer/portainer-ce registry.cn-hangzhou.aliyuncs.com/wanlinus/portainer-ce && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/portainer-ce
       - name: apiserver
-        run : docker pull dependencytrack/apiserver && docker image tag dependencytrack/apiserver registry.cn-hangzhou.aliyuncs.com/wanlinus/apiserver && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/apiserver
+        run: docker pull dependencytrack/apiserver && docker image tag dependencytrack/apiserver registry.cn-hangzhou.aliyuncs.com/wanlinus/apiserver && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/apiserver
       - name: frontend
         run: docker pull dependencytrack/frontend && docker image tag dependencytrack/frontend registry.cn-hangzhou.aliyuncs.com/wanlinus/frontend && docker push registry.cn-hangzhou.aliyuncs.com/wanlinus/frontend

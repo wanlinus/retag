@@ -1,0 +1,15 @@
+mysql:8.4
+redis:7
+eclipse-mosquitto:2
+quay.io/minio/minio:RELEASE.2024-07-04T14-25-45Z
+portainer/portainer-ce
+dependencytrack/apiserver
+dependencytrack/frontend
+
+prom/prometheus
+prom/alertmanager
+grafana/grafana
+quay.io/prometheus/node-exporter
+google/cadvisor:latest
+oliver006/redis_exporter
+prom/mysqld-exporter
