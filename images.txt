@@ -12,4 +12,4 @@ grafana/grafana
 quay.io/prometheus/node-exporter
 gcr.io/cadvisor/cadvisor
 oliver006/redis_exporter
-prom/mysqld-exporter
+quay.io/prometheus/mysqld-exporter
