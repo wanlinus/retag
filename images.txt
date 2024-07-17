@@ -13,3 +13,6 @@ quay.io/prometheus/node-exporter
 gcr.io/cadvisor/cadvisor
 oliver006/redis_exporter
 quay.io/prometheus/mysqld-exporter
+onlyoffice/documentserver
+rabbitmq
+postgres:12
